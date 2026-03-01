@@ -1,0 +1,29 @@
+[package]
+name = "chatgpt2md"
+version = "0.2.0"
+edition = "2024"
+description = "Convert ChatGPT export to Markdown with full-text search and MCP server for Claude"
+license = "MIT"
+repository = "https://github.com/NextStat/chatgpt2md"
+readme = "README.md"
+keywords = ["chatgpt", "markdown", "converter", "claude", "mcp"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+clap = { version = "4", features = ["derive"] }
+chrono = { version = "0.4", features = ["serde"] }
+zip = "2"
+sanitize-filename = "0.5"
+indicatif = "0.17"
+tantivy = "0.25"
+rmcp = { version = "0.17", features = ["server", "macros", "transport-io"] }
+tokio = { version = "1", features = ["full"] }
+schemars = "1"
+dirs = "6"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true

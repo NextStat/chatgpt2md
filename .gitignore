@@ -1,0 +1,8 @@
+/target
+/test_output
+/test_data.json
+*.swp
+*.swo
+.DS_Store
+.claude/
+repo_page.png
